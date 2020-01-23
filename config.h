@@ -83,7 +83,7 @@ static const char *downvol[] = { "pactl", "--", "set-sink-volume", "0", "-5%", N
 static const char *nonevol[] = { "pactl", "--", "set-sink-volume", "0", "0", NULL };
 static const char *relativevol[] = { "pactl", "--", "set-sink-volume", "0", "50%", NULL };
 
-static const char *runautocmd[] = { "/home/spring/scripts/autostart.sh", "&", NULL };
+static const char *changebgicmd[] = { "/home/spring/MyBins/picture.sh", NULL };
 static const char *trayercmd[] = { "/home/spring/scripts/dwm-trayer.sh", "1", NULL };
 static const char *notrayer[] = { "/home/spring/scripts/dwm-trayer.sh", "0", NULL };
 static const char scratchpadname[] = "scratchpad";
@@ -105,7 +105,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,			XK_s, 	   spawn,		   {.v = downvol } },
 	{ MODKEY|ShiftMask|ControlMask,	XK_s,  	   spawn,		   {.v = nonevol } },
 	{ MODKEY|ShiftMask|ControlMask,	XK_w,  	   spawn,		   {.v = relativevol } },
-	{ MODKEY,						XK_r,	   spawn,		   {.v = runautocmd } },
+	{ MODKEY,						XK_c,	   spawn,		   {.v = changebgicmd } },
 	{ MODKEY|ControlMask,			XK_t,	   spawn,		   {.v = trayercmd } },
 	{ MODKEY|ControlMask,			XK_n,	   spawn,		   {.v = notrayer } },
 	{ MODKEY,                       XK_s,	   togglescratch,  {.v = scratchpadcmd } },
