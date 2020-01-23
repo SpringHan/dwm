@@ -84,8 +84,8 @@ static const char *nonevol[] = { "pactl", "--", "set-sink-volume", "0", "0", NUL
 static const char *relativevol[] = { "pactl", "--", "set-sink-volume", "0", "50%", NULL };
 
 static const char *changebgicmd[] = { "/home/spring/MyBins/picture.sh", NULL };
-static const char *trayercmd[] = { "/home/spring/scripts/dwm-trayer.sh", "1", NULL };
-static const char *notrayer[] = { "/home/spring/scripts/dwm-trayer.sh", "0", NULL };
+static const char *trayercmd[] = { "/home/spring/Github/dwm/scripts/dwm-trayer.sh", "1", NULL };
+static const char *notrayer[] = { "/home/spring/Github/dwm/scripts/dwm-trayer.sh", "0", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
