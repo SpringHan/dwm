@@ -81,6 +81,7 @@ static const char *upvol[] = { "pactl", "--", "set-sink-volume", "0", "+5%", NUL
 static const char *downvol[] = { "pactl", "--", "set-sink-volume", "0", "-5%", NULL };
 static const char *nonevol[] = { "pactl", "--", "set-sink-volume", "0", "0", NULL };
 static const char *relativevol[] = { "pactl", "--", "set-sink-volume", "0", "50%", NULL };
+static const char *loadcninput[] = { "/home/spring/inputCN.sh", NULL };
 
 static const char *changebgicmd[] = { "/home/spring/MyBins/picture.sh", NULL };
 static const char *trayercmd[] = { "/home/spring/Github/dwm/scripts/dwm-trayer.sh", "1", NULL };
@@ -106,6 +107,7 @@ static Key keys[] = {
 	{ MODKEY,						XK_c,	   spawn,		   {.v = changebgicmd } },
 	{ MODKEY|ControlMask,			XK_t,	   spawn,		   {.v = trayercmd } },
 	{ MODKEY|ControlMask,			XK_n,	   spawn,		   {.v = notrayer } },
+	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = loadcninput } },
 	{ MODKEY,                       XK_s,	   togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
