@@ -81,6 +81,7 @@ static const char *upvol[] = { "pactl", "--", "set-sink-volume", "0", "+5%", NUL
 static const char *downvol[] = { "pactl", "--", "set-sink-volume", "0", "-5%", NULL };
 static const char *nonevol[] = { "pactl", "--", "set-sink-volume", "0", "0", NULL };
 static const char *relativevol[] = { "pactl", "--", "set-sink-volume", "0", "50%", NULL };
+static const char *setvol[] = {"/home/spring/Github/dwm/scripts/soundinput.sh", NULL};
 static const char *loadcninput[] = { "/home/spring/inputCN.sh", NULL };
 
 static const char *changebgicmd[] = { "/home/spring/MyBins/picture.sh", NULL };
@@ -102,6 +103,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_s, 	   spawn,		   {.v = screenget } },
 	{ MODKEY|ControlMask,			XK_w,	   spawn,		   {.v = upvol } },
 	{ MODKEY|ControlMask,			XK_s, 	   spawn,		   {.v = downvol } },
+	{ MODKEY|ControlMask,           XK_i,      spawn,          {.v = setvol } },
 	{ MODKEY|ShiftMask|ControlMask,	XK_s,  	   spawn,		   {.v = nonevol } },
 	{ MODKEY|ShiftMask|ControlMask,	XK_w,  	   spawn,		   {.v = relativevol } },
 	{ MODKEY,						XK_c,	   spawn,		   {.v = changebgicmd } },
