@@ -33,7 +33,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1:Oth", "2:Cod", "3:Web", "4:Dra", "5:Ved", "6:Mus", "7:Pla", "8:Stu" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -76,6 +76,7 @@ static const char *browsercmd[] = { "google-chrome-stable", NULL };
 static const char *musicmd[] = { "netease-cloud-music", NULL };
 static const char *imagecmd[] = { "gimp", NULL };
 static const char *timcmd[] = { "deepin-tim", NULL };
+static const char *closescreen[] = { "i3lock", NULL };
 static const char *screenget[] = { "/home/spring/MyBins/screenphoto.sh", NULL };
 static const char *upvol[] = { "pactl", "--", "set-sink-volume", "0", "+5%", NULL };
 static const char *downvol[] = { "pactl", "--", "set-sink-volume", "0", "-5%", NULL };
@@ -95,22 +96,23 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,      			        XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,						XK_g, 	   spawn,		   {.v = browsercmd } },
-	{ MODKEY|ShiftMask,				XK_m, 	   spawn,		   {.v = musicmd } },
-	{ MODKEY|ShiftMask,				XK_g, 	   spawn,		   {.v = imagecmd } },
-	{ MODKEY|ShiftMask,				XK_t,      spawn,		   {.v = timcmd } },
-	{ MODKEY|ShiftMask,				XK_s, 	   spawn,		   {.v = screenget } },
-	{ MODKEY|ControlMask,			XK_w,	   spawn,		   {.v = upvol } },
-	{ MODKEY|ControlMask,			XK_s, 	   spawn,		   {.v = downvol } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_g,      spawn,          {.v = browsercmd } },
+	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = musicmd } },
+	{ MODKEY|ShiftMask,             XK_g,      spawn,          {.v = imagecmd } },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = timcmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenget } },
+	{ MODKEY|ControlMask,           XK_w,      spawn,          {.v = upvol } },
+	{ MODKEY|ControlMask,           XK_s,      spawn,          {.v = downvol } },
 	{ MODKEY|ControlMask,           XK_i,      spawn,          {.v = setvol } },
-	{ MODKEY|ShiftMask|ControlMask,	XK_s,  	   spawn,		   {.v = nonevol } },
-	{ MODKEY|ShiftMask|ControlMask,	XK_w,  	   spawn,		   {.v = relativevol } },
-	{ MODKEY,						XK_c,	   spawn,		   {.v = changebgicmd } },
-	{ MODKEY|ControlMask,			XK_t,	   spawn,		   {.v = trayercmd } },
-	{ MODKEY|ControlMask,			XK_n,	   spawn,		   {.v = notrayer } },
+	{ MODKEY|ShiftMask|ControlMask, XK_s,      spawn,          {.v = nonevol } },
+	{ MODKEY|ShiftMask|ControlMask, XK_w,      spawn,          {.v = relativevol } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = changebgicmd } },
+	{ MODKEY|ControlMask,           XK_t,      spawn,          {.v = trayercmd } },
+	{ MODKEY|ControlMask,           XK_n,      spawn,          {.v = notrayer } },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = loadcninput } },
-	{ MODKEY,                       XK_s,	   togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY|ControlMask,           XK_c,      spawn,          {.v = closescreen } },
+	{ MODKEY,                       XK_s,      togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -140,7 +142,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,           		    XK_q,      killclient,     {0} },
+	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
