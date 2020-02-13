@@ -2,7 +2,7 @@
 # This file was made for `Dynamic Window Manager`'s status bar.
 
 print_date(){
-	date '+%w %Y-%m-%d %H:%M'
+	date '+%a %Y-%m-%d %H:%M'
 }
 
 print_volume() {
