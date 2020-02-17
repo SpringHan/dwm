@@ -105,9 +105,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = timcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenget } },
 	{ MODKEY|ControlMask,           XK_w,      spawn,          {.v = upvol } },
-	{ MODKEY|ControlMask,           XK_s,      spawn,          {.v = downvol } },
-	{ MODKEY|ControlMask,           XK_i,      spawn,          {.v = setvol } },
-	{ MODKEY|ShiftMask|ControlMask, XK_s,      spawn,          {.v = nonevol } },
+	{ MODKEY|ControlMask,           XK_r,      spawn,          {.v = downvol } },
+	{ MODKEY|ControlMask,           XK_u,      spawn,          {.v = setvol } },
+	{ MODKEY|ShiftMask|ControlMask, XK_r,      spawn,          {.v = nonevol } },
 	{ MODKEY|ShiftMask|ControlMask, XK_w,      spawn,          {.v = relativevol } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = changebgicmd } },
 	{ MODKEY|ControlMask,           XK_t,      spawn,          {.v = trayercmd } },
@@ -116,10 +116,10 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_c,      spawn,          {.v = closescreen } },
 	{ MODKEY,                       XK_s,      togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_n,      rotatestack,    {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_e,      rotatestack,    {.i = -1 } },
+	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -166,7 +166,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
+  { MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
