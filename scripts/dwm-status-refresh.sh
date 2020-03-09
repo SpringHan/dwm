@@ -1,7 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-while true
-do
-	sh ./dwm-status-bar.sh
+while true; do
+	/bin/bash ./dwm-status-bar.sh
 	sleep 2
 done
