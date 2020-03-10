@@ -93,6 +93,7 @@ static const char *trayercmd[] = { "/home/spring/Github/dwm/scripts/dwm-trayer.s
 static const char *notrayer[] = { "/home/spring/Github/dwm/scripts/dwm-trayer.sh", "0", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *rangerscratchcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "ranger", NULL };
 
 #include "selfrestart.c"
 
@@ -101,6 +102,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = rangercmd } },
+	{ MODKEY|Mod1Mask,              XK_r,      togglescratch,  {.v = rangerscratchcmd } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = musicmd } },
 	{ MODKEY|ShiftMask,             XK_g,      spawn,          {.v = imagecmd } },
