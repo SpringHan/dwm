@@ -89,6 +89,8 @@ static const char *nonevol[] = { "pactl", "--", "set-sink-volume", "0", "0", NUL
 static const char *relativevol[] = { "pactl", "--", "set-sink-volume", "0", "50%", NULL };
 static const char *setvol[] = { "/home/spring/Github/dwm/scripts/soundinput.sh", NULL };
 static const char *loadcninput[] = { "/home/spring/inputCN.sh", NULL };
+static const char *loadcolemak[] = { "xmodmap", "~/.Xmodmap", NULL };
+static const char *loadqwerty[] = { "setxkbmap", "us", NULL };
 
 static const char *changebgicmd[] = { "/home/spring/MyBins/picture.sh", NULL };
 static const char *trayercmd[] = { "/home/spring/Github/dwm/scripts/dwm-trayer.sh", "1", NULL };
@@ -122,6 +124,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_n,      spawn,          {.v = notrayer } },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = loadcninput } },
 	{ MODKEY|ControlMask,           XK_c,      spawn,          {.v = closescreen } },
+	{ MODKEY|Mod1Mask,              XK_c,      spawn,          {.v = loadcolemak } },
+	{ MODKEY|Mod1Mask,              XK_q,      spawn,          {.v = loadqwerty } },
 	{ MODKEY,                       XK_s,      togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_n,      rotatestack,    {.i = +1 } },
