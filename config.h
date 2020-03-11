@@ -79,13 +79,13 @@ static const char *browsercmd[] = { "google-chrome-stable", NULL };
 static const char *musicmd[] = { "netease-cloud-music", NULL };
 static const char *imagecmd[] = { "gimp", NULL };
 static const char *timcmd[] = { "deepin-tim", NULL };
-static const char *closescreen[] = { "i3lock", NULL };
+static const char *closescreen[] = { "/home/spring/MyBins/lock.sh", NULL };
 static const char *screenget[] = { "/home/spring/MyBins/screenphoto.sh", NULL };
 static const char *upvol[] = { "pactl", "--", "set-sink-volume", "0", "+5%", NULL };
 static const char *downvol[] = { "pactl", "--", "set-sink-volume", "0", "-5%", NULL };
 static const char *nonevol[] = { "pactl", "--", "set-sink-volume", "0", "0", NULL };
 static const char *relativevol[] = { "pactl", "--", "set-sink-volume", "0", "50%", NULL };
-static const char *setvol[] = {"/home/spring/Github/dwm/scripts/soundinput.sh", NULL };
+static const char *setvol[] = { "/home/spring/Github/dwm/scripts/soundinput.sh", NULL };
 static const char *loadcninput[] = { "/home/spring/inputCN.sh", NULL };
 
 static const char *changebgicmd[] = { "/home/spring/MyBins/picture.sh", NULL };
