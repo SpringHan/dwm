@@ -89,7 +89,7 @@ static const char *nonevol[] = { "pactl", "--", "set-sink-volume", "0", "0", NUL
 static const char *relativevol[] = { "pactl", "--", "set-sink-volume", "0", "50%", NULL };
 static const char *setvol[] = { "/home/spring/Github/dwm/scripts/soundinput.sh", NULL };
 static const char *loadcninput[] = { "/home/spring/inputCN.sh", NULL };
-static const char *loadcolemak[] = { "xmodmap", "~/.Xmodmap", NULL };
+static const char *loadcolemak[] = { "xmodmap", "/home/spring/.Xmodmap", NULL };
 static const char *loadqwerty[] = { "setxkbmap", "us", NULL };
 
 static const char *changebgicmd[] = { "/home/spring/MyBins/picture.sh", NULL };
