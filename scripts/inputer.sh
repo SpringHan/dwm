@@ -2,4 +2,4 @@
 
 sleep 5
 fcitx &
-setxkbmap us colemak
+setxkbmap us colemak -option
