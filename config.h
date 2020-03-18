@@ -99,8 +99,6 @@ static const char *loadcolemak[] = { "xmodmap", "/home/spring/.Xmodmap", NULL };
 static const char *loadqwerty[] = { "setxkbmap", "us", NULL };
 
 static const char *changebgicmd[] = { "/home/spring/MyBins/picture.sh", NULL };
-static const char *trayercmd[] = { "/home/spring/Github/dwm/scripts/dwm-trayer.sh", "1", NULL };
-static const char *notrayer[] = { "/home/spring/Github/dwm/scripts/dwm-trayer.sh", "0", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *rangerscratchcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "ranger", NULL };
@@ -127,8 +125,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask|ControlMask, XK_r,      spawn,          {.v = nonevol } },
 	{ MODKEY|ShiftMask|ControlMask, XK_w,      spawn,          {.v = relativevol } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = changebgicmd } },
-	{ MODKEY|ControlMask,           XK_t,      spawn,          {.v = trayercmd } },
-	{ MODKEY|ControlMask,           XK_n,      spawn,          {.v = notrayer } },
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = loadcninput } },
 	{ MODKEY|ControlMask,           XK_c,      spawn,          {.v = closescreen } },
 	{ MODKEY|Mod1Mask,              XK_c,      spawn,          {.v = loadcolemak } },
