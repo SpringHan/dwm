@@ -10,7 +10,21 @@ print_uptime(){
 }
 
 print_mem(){
-	memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
+	a=0
+	i=0
+	swapSizes=0
+	swapNum=$(($(awk 'END {print NR}' /proc/swaps) - 1 ))
+	until [ ${a} == 1 ]
+	do
+		i=`expr ${i} + 1`
+		line=`expr ${i} + 1`
+		swapSize[${i}]=`expr $(($(sed -n ${line}p /proc/swaps | awk '{print $3}') - $(sed -n ${line}p /proc/swaps | awk '{print $4}'))) / 1024`
+		swapSizes=`expr ${swapSizes} + ${swapSize[$i]}`
+		if [ ${i} == ${swapNum} ]; then
+			a=1
+		fi
+	done
+	memfree=`expr $(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024)) + ${swapSizes}`
 	echo -e "$memfree"
 }
 
