@@ -40,7 +40,7 @@ print_volume() {
 
 print_temp(){
 	test -f /sys/class/thermal/thermal_zone0/temp || return 0
-	echo $(head -c 2 /sys/class/thermal/thermal_zone0/temp)C
+	echo -e "$(head -c 2 /sys/class/thermal/thermal_zone0/temp)C"
 }
 
 xsetroot -name "Mem: $(print_mem)M Vol: $(print_volume) UT:[$(print_uptime)] Temp: $(print_temp) [$(print_date)]"
