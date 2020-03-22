@@ -1,3 +1,3 @@
 #!/bin/bash
 
-picom -CGb
+[ "$(ps ax|grep -v grep|grep picom)" == "" ] && picom -CGb
