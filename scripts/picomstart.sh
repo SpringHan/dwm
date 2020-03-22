@@ -1,3 +1,3 @@
 #!/bin/bash
 
-compton -CGb
+picom -CGb
