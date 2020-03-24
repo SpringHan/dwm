@@ -28,21 +28,25 @@ print_mem(){
 	echo -e "$memfree"
 }
 
-print_volume() {
-	volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
-	if test "$volume" -gt 0
-	then
-		echo -e "${volume}%"
-	else
-		echo -e "Mute"
-	fi
-}
-
 print_temp(){
 	test -f /sys/class/thermal/thermal_zone0/temp || return 0
 	echo -e "$(head -c 2 /sys/class/thermal/thermal_zone0/temp)C"
 }
 
-xsetroot -name "Mem: $(print_mem)M Vol: $(print_volume) UT:[$(print_uptime)] Temp: $(print_temp) [$(print_date)]"
+print_volume () {
+	VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
+	printf "%s" "$SEP1"
+	if [ "$VOL" -eq 0 ]; then
+			printf "🔇"
+	elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 30 ]; then
+			printf "🔈 %s%%" "$VOL"
+	elif [ "$VOL" -gt 30 ] && [ "$VOL" -le 60 ]; then
+			printf "🔉 %s%%" "$VOL"
+	else
+			printf "🔊 %s%%" "$VOL"
+	fi
+}
+
+xsetroot -name "Mem: $(print_mem)M $(print_volume) UT:[$(print_uptime)] Temp: $(print_temp) [$(print_date)]"
 
 exit 0
