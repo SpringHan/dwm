@@ -30,7 +30,7 @@ print_mem(){
 
 print_temp(){
 	test -f /sys/class/thermal/thermal_zone0/temp || return 0
-	echo -e "$(head -c 2 /sys/class/thermal/thermal_zone0/temp)C"
+	echo -e "$(head -c 2 /sys/class/thermal/thermal_zone0/temp)°C"
 }
 
 print_volume () {
