@@ -96,7 +96,7 @@ static const char *setvol[] = { "/home/spring/Github/dwm/scripts/soundinput.sh",
 static const char *loadcolemak[] = { "xmodmap", "/home/spring/.Xmodmap", NULL };
 static const char *loadqwerty[] = { "setxkbmap", "us", NULL };
 
-static const char *changebgicmd[] = { "/home/spring/MyBins/picture.sh", NULL };
+static const char *changebgicmd[] = { "/home/spring/Github/dwm/scripts/picture.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *rangerscratchcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "ranger", NULL };
