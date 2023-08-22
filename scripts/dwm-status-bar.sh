@@ -2,7 +2,7 @@
 # This file was made for `Dynamic Window Manager`'s status bar.
 
 print_date(){
-	date '+%a %Y-%m-%d %H:%M'
+	date '+%a %m-%d %H:%M'
 }
 
 print_uptime(){
@@ -10,21 +10,7 @@ print_uptime(){
 }
 
 print_mem(){
-	a=0
-	i=0
-	swapSizes=0
-	swapNum=$(($(awk 'END {print NR}' /proc/swaps) - 1 ))
-	until [ ${a} == 1 ]
-	do
-		i=`expr ${i} + 1`
-		line=`expr ${i} + 1`
-		swapSize[${i}]=`expr $(($(sed -n ${line}p /proc/swaps | awk '{print $3}') - $(sed -n ${line}p /proc/swaps | awk '{print $4}'))) / 1024`
-		swapSizes=`expr ${swapSizes} + ${swapSize[$i]}`
-		if [ ${i} == ${swapNum} ]; then
-			a=1
-		fi
-	done
-	memfree=`expr $(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024)) + ${swapSizes}`
+	memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
 	echo -e "$memfree"
 }
 
@@ -47,6 +33,22 @@ print_volume () {
 	fi
 }
 
-xsetroot -name "Mem: $(print_mem)M $(print_volume) UT:[$(print_uptime)] Temp: $(print_temp) [$(print_date)]"
+get_battery_combined_percent() {
+	total_charge=$(expr $(acpi -b | awk '{print $4}' | grep -Eo "[0-9]+" | paste -sd+ | bc));
+	battery_number=$(acpi -b | wc -l);
+	percent=$(expr $total_charge / $battery_number);
+	echo $percent;
+}
+
+get_battery_charging_status() {
+	if $(acpi -b | grep --quiet Discharging)
+	then
+		echo ""
+	else
+		echo "+"
+	fi
+}
+
+xsetroot -name "Mem: $(print_mem)M $(print_volume) UT:[$(print_uptime)] $(print_temp) ($(get_battery_combined_percent)%$(get_battery_charging_status)) [$(print_date)]"
 
 exit 0
