@@ -92,9 +92,7 @@ static const char *downonevol[] = { "pactl", "set-sink-volume", "alsa_output.pci
 static const char *nonevol[] = { "pactl", "set-sink-volume", "alsa_output.pci-0000_00_1b.0.analog-stereo", "0", NULL };
 static const char *relativevol[] = { "pactl", "set-sink-volume", "alsa_output.pci-0000_00_1b.0.analog-stereo", "50%", NULL };
 static const char *setvol[] = { "/home/spring/Github/dwm/scripts/soundinput.sh", NULL };
-static const char *loadcolemak[] = { "xmodmap", "/home/spring/.Xmodmap", NULL };
-static const char *loadqwerty[] = { "setxkbmap", "us", NULL };
-static const char *flameshotgui[] = { "flameshot", "gui", NULL};
+static const char *flameshotgui[] = { "flameshot", "gui", NULL };
 
 static const char *changebgicmd[] = { "/home/spring/Github/dwm/scripts/picture.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
@@ -123,16 +121,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask|ControlMask, XK_w,      spawn,          {.v = relativevol } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = changebgicmd } },
 	{ MODKEY|ControlMask,           XK_c,      spawn,          {.v = closescreen } },
-	{ MODKEY|Mod1Mask,              XK_c,      spawn,          {.v = loadcolemak } },
-	{ MODKEY|Mod1Mask,              XK_q,      spawn,          {.v = loadqwerty } },
 	{ MODKEY,                       XK_s,      togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_n,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_e,      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_w,      hidewin,        {0} },
