@@ -98,6 +98,7 @@ static const char *changebgicmd[] = { "/home/spring/Github/dwm/scripts/picture.s
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *rangerscratchcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "ranger", NULL };
+static const char *chromestartup[] = { "chromium", NULL };
 
 #include "selfrestart.c"
 
@@ -121,8 +122,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask|ControlMask, XK_w,      spawn,          {.v = relativevol } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = changebgicmd } },
 	{ MODKEY|ControlMask,           XK_c,      spawn,          {.v = closescreen } },
+	{ MODKEY,                       XK_b,      spawn,          {.v = chromestartup } },
 	{ MODKEY,                       XK_s,      togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_n,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_e,      rotatestack,    {.i = -1 } },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
